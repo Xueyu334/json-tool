@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON在线解析 · 专业工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="content-wrapper">
+        <div class="tool-header">
+            <div class="tool-title">
+                JSON在线解析<span>(双击自动格式化)</span>
+            </div>
+            <div class="options-dropdown">
+                <span>设置</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left: 6px; transition: transform 0.2s;">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="options-content">
+                    <label class="option-item"><input type="checkbox" checked id="opt-color"> 着色</label>
+                    <label class="option-item"><input type="checkbox" id="opt-compress"> 压缩</label>
+                    <label class="option-item"><input type="checkbox" id="opt-index"> 数组索引</label>
+                    <label class="option-item"><input type="checkbox" id="opt-type"> 显示类型</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-container">
+            <div class="panel left-panel">
+                <div class="panel-header">Raw Input</div>
+                <textarea id="json-input" class="editor-area" spellcheck="false"
+                    placeholder="在此输入或粘贴您的 JSON 数据..."></textarea>
+            </div>
+            <div class="gutter" id="resizer"></div>
+            <div class="panel right-panel">
+                <div class="panel-header" id="result-header">
+                    <div style="flex: 1;">String Parse (Strict)</div>
+                    <div style="flex: 1; padding-left: 20px;">JS Eval (Relaxed)</div>
+                </div>
+                <div class="result-area">
+                    <div id="string-parse-result" class="parse-col"></div>
+                    <div id="js-eval-result" class="eval-col"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        JSON Parser · Built with precision · © 2024
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
