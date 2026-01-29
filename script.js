@@ -133,6 +133,19 @@ optCompress.addEventListener('change', update);
 optIndex.addEventListener('change', update);
 optType.addEventListener('change', update);
 
+document.getElementById('btn-compress-input').addEventListener('click', () => {
+    const val = jsonInput.value.trim();
+    if (!val) return;
+    try {
+        // Use the same relaxed evaluation as the tool supports
+        const obj = new Function(`return (${val})`)();
+        jsonInput.value = JSON.stringify(obj);
+        update();
+    } catch (e) {
+        alert('Compress failed: ' + e.message);
+    }
+});
+
 // Sync scrolling (Optional but nice)
 const parseCol = document.getElementById('string-parse-result');
 const evalCol = document.getElementById('js-eval-result');

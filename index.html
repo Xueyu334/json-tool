@@ -16,8 +16,10 @@
             </div>
             <div class="options-dropdown">
                 <span>设置</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left: 6px; transition: transform 0.2s;">
-                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                    style="margin-left: 6px; transition: transform 0.2s;">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
                 <div class="options-content">
                     <label class="option-item"><input type="checkbox" checked id="opt-color"> 着色</label>
@@ -30,7 +32,18 @@
 
         <div class="panel-container">
             <div class="panel left-panel">
-                <div class="panel-header">Raw Input</div>
+                <div class="panel-header">
+                    <span>Raw Input</span>
+                    <button id="btn-compress-input" class="header-action-btn" title="Compress JSON">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 14 10 14 10 20"></polyline>
+                            <polyline points="20 10 14 10 14 4"></polyline>
+                            <line x1="14" y1="10" x2="21" y2="3"></line>
+                            <line x1="3" y1="21" x2="10" y2="14"></line>
+                        </svg>
+                    </button>
+                </div>
                 <textarea id="json-input" class="editor-area" spellcheck="false"
                     placeholder="在此输入或粘贴您的 JSON 数据..."></textarea>
             </div>

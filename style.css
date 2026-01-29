@@ -187,6 +187,29 @@ body {
     color: white;
 }
 
+/* Header Action Button */
+.header-action-btn {
+    background: transparent;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.header-action-btn:hover {
+    background: var(--gray-200);
+    color: var(--primary-600);
+}
+
+.header-action-btn:active {
+    background: var(--gray-300);
+}
+
 /* Editor Area */
 .editor-area {
     width: 100%;
