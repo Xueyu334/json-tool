@@ -215,14 +215,14 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    padding: var(--space-md);
+    padding: var(--space-sm);
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
+    font-size: 12px;
     resize: none;
     outline: none;
     background: var(--bg-primary);
     color: var(--gray-800);
-    line-height: 1.7;
+    line-height: 1.4;
 }
 
 .editor-area::placeholder {
@@ -240,11 +240,11 @@ body {
 .parse-col,
 .eval-col {
     flex: 1;
-    padding: var(--space-md);
+    padding: var(--space-sm);
     overflow-y: auto;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .parse-col {
@@ -289,9 +289,9 @@ body {
 
 /* JSON Tree Styles */
 .json-tree {
-    line-height: 1.8;
+    line-height: 1.4;
     list-style: none;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-md);
     margin: 0;
     animation: slideDown 0.2s ease-out;
 }
@@ -310,7 +310,8 @@ body {
 
 .json-tree li {
     position: relative;
-    white-space: nowrap;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
 
 /* Toggle Button */
