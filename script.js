@@ -227,17 +227,87 @@ optCompress.addEventListener('change', debouncedUpdate);
 optIndex.addEventListener('change', debouncedUpdate);
 optType.addEventListener('change', debouncedUpdate);
 
+// Format Button
+document.getElementById('btn-format-input').addEventListener('click', () => {
+    const val = jsonInput.value.trim();
+    if (!val) return;
+    try {
+        let obj;
+        try { obj = JSON.parse(val); } catch(e) { obj = new Function(`return (${val})`)(); }
+        jsonInput.value = JSON.stringify(obj, null, 2);
+        update();
+    } catch (e) {
+        alert('Format failed: ' + e.message);
+    }
+});
+
 // Compress Button
 document.getElementById('btn-compress-input').addEventListener('click', () => {
     const val = jsonInput.value.trim();
     if (!val) return;
     try {
-        const obj = new Function(`return (${val})`)();
+        let obj;
+        try { obj = JSON.parse(val); } catch(e) { obj = new Function(`return (${val})`)(); }
         jsonInput.value = JSON.stringify(obj);
         update();
     } catch (e) {
         alert('Compress failed: ' + e.message);
     }
+});
+
+// Unescape Button
+document.getElementById('btn-unescape-input').addEventListener('click', () => {
+    let val = jsonInput.value.trim();
+    if (!val) return;
+    
+    // Try native parse if it's a quoted string
+    try {
+        if (val.startsWith('"') && val.endsWith('"')) {
+            const parsed = JSON.parse(val);
+            if (typeof parsed === 'string') {
+                jsonInput.value = parsed;
+                update();
+                return;
+            }
+        }
+    } catch (e) {}
+
+    // Manual replacement fallback
+    val = val.replace(/\\"/g, '"')
+             .replace(/\\\\/g, '\\')
+             .replace(/\\n/g, '\n')
+             .replace(/\\r/g, '\r')
+             .replace(/\\t/g, '\t')
+             .replace(/\\b/g, '\b')
+             .replace(/\\f/g, '\f');
+             
+    // Strip outer quotes if it resulted in a stringified object/array wrapper
+    if (val.startsWith('"') && val.endsWith('"')) {
+        let inner = val.slice(1, -1);
+        if ((inner.startsWith('{') && inner.endsWith('}')) || (inner.startsWith('[') && inner.endsWith(']'))) {
+             val = inner;
+        }
+    }
+    
+    jsonInput.value = val;
+    update();
+});
+
+// Escape Button
+document.getElementById('btn-escape-input').addEventListener('click', () => {
+    let val = jsonInput.value.trim();
+    if (!val) return;
+    
+    // Attempt to compress JSON first to avoid escaping pretty-print spaces and newlines
+    try {
+        let obj;
+        try { obj = JSON.parse(val); } catch(e) { obj = new Function(`return (${val})`)(); }
+        val = JSON.stringify(obj);
+    } catch(e) {}
+    
+    // JSON.stringify on a string naturally escapes its contents properly
+    jsonInput.value = JSON.stringify(val);
+    update();
 });
 
 // Sync scrolling

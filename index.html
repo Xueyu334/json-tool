@@ -34,15 +34,12 @@
             <div class="panel left-panel">
                 <div class="panel-header">
                     <span>Raw Input</span>
-                    <button id="btn-compress-input" class="header-action-btn" title="Compress JSON">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="4 14 10 14 10 20"></polyline>
-                            <polyline points="20 10 14 10 14 4"></polyline>
-                            <line x1="14" y1="10" x2="21" y2="3"></line>
-                            <line x1="3" y1="21" x2="10" y2="14"></line>
-                        </svg>
-                    </button>
+                    <div style="display: flex; gap: 8px;">
+                        <button id="btn-format-input" class="header-action-text-btn" title="格式化 JSON">格式化</button>
+                        <button id="btn-compress-input" class="header-action-text-btn" title="压缩 JSON">压缩</button>
+                        <button id="btn-escape-input" class="header-action-text-btn" title="添加转义字符">转义</button>
+                        <button id="btn-unescape-input" class="header-action-text-btn" title="去除转义字符">去转义</button>
+                    </div>
                 </div>
                 <textarea id="json-input" class="editor-area" spellcheck="false"
                     placeholder="在此输入或粘贴您的 JSON 数据..."></textarea>
