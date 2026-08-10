@@ -1,6 +1,6 @@
 # JSON Parser Pro (JSON 在线解析器)
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
+![License](https://img.shields.io/badge/license-Mulan__PSL%20v2-blue.svg) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 
 **JSON Parser Pro** 是一个轻量、现代且高性能的 JSON 可视化工具。它专为开发者设计，提供严格模式与宽松模式的双重解析引擎，支持实时语法高亮、自动格式化及类型推断。
 
@@ -74,4 +74,4 @@ json-tool/
 
 ## 📄 License
 
-MIT License. 欢迎提交 Issues 和 Pull Requests！
+本项目基于 [Mulan PSL v2](LICENSE) (木兰宽松许可证，第2版) 开源。欢迎提交 Issues 和 Pull Requests！
